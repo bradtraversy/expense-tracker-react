@@ -8,7 +8,9 @@ export const AddTransaction = () => {
   const { addTransaction } = useContext(GlobalContext);
 
   const onSubmit = e => {
-    e.preventDefault();
+      setText('')
+      setAmount(0)
+      e.preventDefault(); 
 
     const newTransaction = {
       id: Math.floor(Math.random() * 100000000),
@@ -32,7 +34,7 @@ export const AddTransaction = () => {
             >Amount <br />
             (negative - expense, positive - income)</label
           >
-          <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />
+          <input type="number" value={amount} step="any" onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />
         </div>
         <button className="btn">Add transaction</button>
       </form>
