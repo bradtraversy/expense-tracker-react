@@ -1,0 +1,1 @@
+console.log('im just trying and applying github course')
