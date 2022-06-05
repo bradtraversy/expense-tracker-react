@@ -23,10 +23,14 @@ export const Balance = () => {
   const amounts = transactions.map(transaction => transaction.amount);
 
   const total = amounts.reduce((acc, item) => (acc += item), 0);
+  
+  const today = new Date();
+  const option = {year : "numeric", month: "long", day: "numeric"}
 
   return (
     <>
       <h4>Your Balance</h4>
+      <h5>as of {today.toLocaleDateString("en-US", option)}</h5>
     <h1>{moneyFormatter(total)}</h1>
     </>
   )
