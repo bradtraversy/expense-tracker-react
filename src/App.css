@@ -19,9 +19,16 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+.header {
+  text-align: center; /* Centering text inside header */
+  font-size: 2em; /* Making font size larger, you can adjust as needed */
+  padding: 10px; /* Optional: for some space around the text */
+  width: 100%; /* Full width */
+}
+
 .container {
   margin: 30px auto;
-  width: 350px;
+  width: 550px;
 }
 
 h1 {
@@ -154,4 +161,31 @@ input[type='number'] {
   .container {
     width: 300px;
   }
+}
+
+
+.main-container {
+  display: flex;
+  width: 100vw; /* Assuming you want them to take the entire view width */
+}
+
+.container, 
+.chart-container {
+  flex: 1; /* Makes each child div of .main-container take equal width */
+}
+
+/* Optional: Adding a small gap between .container and .chart-container for better visual appearance */
+.container {
+  margin-right: 20px;
+  margin-left: 30px;
+}
+
+.chart-container {
+  margin-left: 30px;
+}
+
+.date-input {
+  font-size: 18px; /* Adjust as needed */
+  padding: 10px;  /* Adjust as needed */
+  height: 40px;  /* Adjust as needed */
 }
