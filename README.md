@@ -1,6 +1,6 @@
-# Expense Tracker (React)
+# Expense Tracker
 
-This is a React version of the [vanilla JS Expense Tracker](https://github.com/bradtraversy/vanillawebprojects/tree/master/expense-tracker). It uses functional components with hooks and the context API
+This project is modified from https://www.youtube.com/watch?v=KyWaXA_NvT0&t=440s.
 
 ## Usage
 ```
