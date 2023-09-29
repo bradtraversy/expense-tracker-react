@@ -43,15 +43,15 @@ export const LineCharts = () => {
 
   return (
     <div>
-      <h3>Expense Chart</h3>
+      <h3>Expense Chart Over Time</h3>
       <select value={timeFrame} onChange={(e) => setTimeFrame(e.target.value)}>
         <option value="Daily">Daily</option>
         <option value="Weekly">Weekly</option>
         <option value="Monthly">Monthly</option>
       </select>
       <LineChart
-        width={500}
-        height={300}
+        width={600}
+        height={400}
         data={filterTransactionsByTimeFrame}
         margin={{
           top: 5, right: 30, left: 20, bottom: 5,

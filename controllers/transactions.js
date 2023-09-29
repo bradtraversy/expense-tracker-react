@@ -78,3 +78,36 @@ exports.deleteTransaction = async (req, res, next) => {
     });
   }
 }
+
+exports.updateTransaction = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const { text, amount } = req.body;
+    
+    // Find the transaction by ID and update it
+    let transaction = await Transaction.findById(id);
+    
+    if(!transaction) {
+      return res.status(404).json({
+        success: false,
+        error: 'No transaction found'
+      });
+    }
+
+    transaction.text = text;
+    transaction.amount = amount;
+
+    await transaction.save();
+
+    return res.status(200).json({
+      success: true,
+      data: transaction
+    });
+
+  } catch (err) {
+    return res.status(500).json({
+      success: false,
+      error: 'Server Error'
+    });
+  }
+}

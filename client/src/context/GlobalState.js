@@ -49,6 +49,26 @@ export const GlobalProvider = ({ children }) => {
     }
   }
 
+  async function editTransaction(id, newText, newAmount) {
+    try {
+      const res = await axios.put(`/api/v1/transactions/${id}`, {
+        text: newText,
+        amount: newAmount
+      });
+      
+      dispatch({
+        type: 'EDIT_TRANSACTION',
+        payload: res.data.data
+      });
+    } catch (err) {
+      dispatch({
+        type: 'TRANSACTION_ERROR',
+        payload: err.response.data.error
+      });
+    }
+  }
+
+
   async function addTransaction(transaction) {
     const config = {
       headers: {
@@ -77,7 +97,8 @@ export const GlobalProvider = ({ children }) => {
     loading: state.loading,
     getTransactions,
     deleteTransaction,
-    addTransaction
+    addTransaction,
+    editTransaction
   }}>
     {children}
   </GlobalContext.Provider>);
