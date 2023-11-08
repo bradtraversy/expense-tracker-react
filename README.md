@@ -39,3 +39,4 @@ Create a new databse in mongoDB and change config.env file in config folder acco
 - Filter transactions based on category and time.
 - Pie charts of expenses and income, hovering to see details.
 - Line charts for daily/weekly/monthly expenses
+- AI to auto suggest catrgory
